@@ -2,19 +2,21 @@ import {useContacts} from './useContacts';
 import Grid from '@material-ui/core/Grid';
 import {TableContacts} from "./TableContacts";
 import { makeStyles , Typography} from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    paper: {
-        height: 140,
-        width: 100,
-    },
+
     control: {
         padding: theme.spacing(2),
     },
+    title:{
+        marginBottom:theme.spacing(2)
+    }
 }));
 
 export const Contacts = ()=>{
@@ -25,12 +27,12 @@ export const Contacts = ()=>{
         return ('Error')
     }
     if(contacts.isLoading){
-        return ('loading...')
+        return (<CircularProgress />)
     }
 
     return (
         <Grid container className={classes.control} >
-            <Typography component="h3">Contacts</Typography>
+            <Typography variant="h3" component="h1" className={classes.title}>Contacts</Typography>
             <TableContacts data={contacts.data}/>
         </Grid>
     );

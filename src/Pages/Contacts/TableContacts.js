@@ -1,9 +1,9 @@
-import {Avatar,TableRow,TableHead,TableContainer,TableCell,TableBody,Table,Typography} from '@material-ui/core';
+import {Avatar ,TableRow,TableHead,TableContainer,TableCell,TableBody,Table,Typography} from '@material-ui/core';
 import { format, parseISO } from 'date-fns'
 import {CopyToClipboard} from "../../components/CopyToClipboard";
-
-
+import {NATIONALITY_USER_NAME} from "../../constants/Nationality";
 import Paper from '@material-ui/core/Paper';
+
 export const TableContacts = (data) =>{
 
     return(
@@ -35,7 +35,7 @@ export const TableContacts = (data) =>{
                             <TableCell ><CopyToClipboard text={row.email}/></TableCell>
                             <TableCell ><CopyToClipboard text={row.cell}/></TableCell>
                             <TableCell>{row.location.country}</TableCell>
-                            <TableCell>{row.location.country}</TableCell>
+                            <TableCell>{NATIONALITY_USER_NAME[row.nat]}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
