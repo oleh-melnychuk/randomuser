@@ -1,7 +1,7 @@
 import {useContacts} from './useContacts';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import {TableContacts} from "./TableContacts";
+import { makeStyles , Typography} from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -30,6 +30,7 @@ export const Contacts = ()=>{
 
     return (
         <Grid container className={classes.control} >
+            <Typography component="h3">Contacts</Typography>
             <TableContacts data={contacts.data}/>
         </Grid>
     );

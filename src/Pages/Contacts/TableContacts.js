@@ -1,7 +1,6 @@
-import {Avatar,TableRow,TableHead,TableContainer,TableCell,TableBody,Table} from '@material-ui/core';
+import {Avatar,TableRow,TableHead,TableContainer,TableCell,TableBody,Table,Typography} from '@material-ui/core';
 import { format, parseISO } from 'date-fns'
-
-
+import {CopyToClipboard} from "../../components/CopyToClipboard";
 
 
 import Paper from '@material-ui/core/Paper';
@@ -30,11 +29,11 @@ export const TableContacts = (data) =>{
                             </TableCell>
                             <TableCell >{row.name.title} {row.name.first} {row.name.last}</TableCell>
                             <TableCell >
-                                {format( parseISO(row.dob.date), 'iiii, MM/dd/yyyy h:m:s aaa')} <br />
-                                {row.dob.age} years <br />
+                                <Typography>{format( parseISO(row.dob.date), 'iiii, MM/dd/yyyy h:m:s aaa')} </Typography>
+                                <Typography>{row.dob.age} years </Typography>
                             </TableCell>
-                            <TableCell >{row.email}</TableCell>
-                            <TableCell>{row.cell}</TableCell>
+                            <TableCell ><CopyToClipboard text={row.email}/></TableCell>
+                            <TableCell ><CopyToClipboard text={row.cell}/></TableCell>
                             <TableCell>{row.location.country}</TableCell>
                             <TableCell>{row.location.country}</TableCell>
                         </TableRow>
