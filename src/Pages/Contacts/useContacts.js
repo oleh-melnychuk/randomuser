@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 
+
 export const useContacts =  () => {
 
     const [data, setData] = useState([]);
@@ -10,9 +11,10 @@ export const useContacts =  () => {
         const getContacts = async () =>
         {
             try {
-                const response = await fetch("https://randomuser.me/api/?results=10");
+                const response = await fetch("https://randomuser.me/api/?results=20");
                 const {results} = await response.json();
                 setData(results);
+                console.log(results);
             }
             catch (e) {
                 serError(true);

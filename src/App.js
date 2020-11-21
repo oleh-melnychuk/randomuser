@@ -1,9 +1,9 @@
 import './App.css';
-import {Contacts} from './Pages/Contacts'
+import {Contacts} from './Pages/Contacts/Contacts'
 
 const App = () => {
   return (
-    <Contacts/>
+    <Contacts />
   );
 };
 
