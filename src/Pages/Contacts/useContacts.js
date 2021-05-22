@@ -11,7 +11,7 @@ export const useContacts =  () => {
         const getContacts = async () =>
         {
             try {
-                const response = await fetch("https://randomuser.me/api/?results=20");
+                const response = await fetch("https://randomuser.me/api/?results=200");
                 const {results} = await response.json();
                 setData(results);
                 console.log(results);
